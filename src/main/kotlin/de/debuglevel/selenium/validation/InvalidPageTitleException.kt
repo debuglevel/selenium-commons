@@ -1,4 +1,4 @@
-package de.debuglevel.selenium
+package de.debuglevel.selenium.validation
 
 /**
  * Thrown if the page title is not the one which was expected.
@@ -8,4 +8,4 @@ package de.debuglevel.selenium
 class InvalidPageTitleException(
     actualPageTitle: String,
     expectedPageTitle: String
-) : InvalidPageException("Page title is '$actualPageTitle' although it was expected to be '$expectedPageTitle'")
+) : InvalidPageException("Page title is '$actualPageTitle' although it was expected to be '$expectedPageTitle'", inner)

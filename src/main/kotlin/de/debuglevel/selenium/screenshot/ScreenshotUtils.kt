@@ -13,6 +13,7 @@ private val logger = KotlinLogging.logger {}
 
 /**
  * Takes a screenshot of the entire page and writes it as PNG to an OutputStream.
+ * @param outputStream OutputStream to write the image into. Will not be closed.
  */
 fun WebDriver.takeScreenshot(outputStream: OutputStream) {
     logger.debug { "Taking screenshot into OutputStream $outputStream..." }
@@ -38,6 +39,7 @@ class WriterNotFoundException(imageFormat: String) : Exception("No appropriate i
 
 /**
  * Takes a screenshot of the entire page and returns it as a PNG ByteArray.
+ * @return ByteArray containing the screenshot as PNG
  */
 fun WebDriver.takeScreenshot(): ByteArray {
     logger.debug { "Taking screenshot as ByteArray..." }
@@ -53,6 +55,7 @@ fun WebDriver.takeScreenshot(): ByteArray {
 
 /**
  * Takes a screenshot of the entire page, saves it as PNG in the working directory and returns the Path.
+ * @param screenshotPath Path where the screenshot should be written to.
  */
 fun WebDriver.takeScreenshot(screenshotPath: Path) {
     logger.debug { "Taking screenshot in Path $screenshotPath..." }
