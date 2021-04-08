@@ -13,9 +13,10 @@ class ChromeLocalWebDriverService(
     override fun get(): WebDriver {
         logger.debug { "Getting WebDriver..." }
 
-        System.setProperty("webdriver.chrome.driver", chromeWebDriverProperties.binarypath)
+        System.setProperty("webdriver.chrome.driver", chromeWebDriverProperties.driverBinaryPath.toString())
         val chromeDriver = ChromeDriver()
 
+        logger.debug { "Got WebDriver: $chromeDriver" }
         return chromeDriver
     }
 }

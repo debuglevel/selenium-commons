@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.firefox.FirefoxOptions
 import org.openqa.selenium.remote.LocalFileDetector
 import org.openqa.selenium.remote.RemoteWebDriver
-import java.net.URL
 
 class FirefoxRemoteWebDriverService(
     private val firefoxRemoteWebDriverProperties: FirefoxRemoteWebDriverProperties
@@ -17,9 +16,10 @@ class FirefoxRemoteWebDriverService(
         logger.debug { "Getting WebDriver..." }
 
         val firefoxOptions = FirefoxOptions()
-        val remoteDriver = RemoteWebDriver(URL(firefoxRemoteWebDriverProperties.url), firefoxOptions)
+        val remoteDriver = RemoteWebDriver(firefoxRemoteWebDriverProperties.url, firefoxOptions)
         remoteDriver.fileDetector = LocalFileDetector()
 
+        logger.debug { "Got WebDriver: $remoteDriver" }
         return remoteDriver
     }
 }

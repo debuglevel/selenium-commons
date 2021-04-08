@@ -13,9 +13,10 @@ class FirefoxLocalWebDriverService(
     override fun get(): WebDriver {
         logger.debug { "Getting WebDriver..." }
 
-        System.setProperty("webdriver.gecko.driver", firefoxWebDriverProperties.binarypath)
+        System.setProperty("webdriver.gecko.driver", firefoxWebDriverProperties.driverBinaryPath.toString())
         val firefoxDriver = FirefoxDriver()
 
+        logger.debug { "Got WebDriver: $firefoxDriver" }
         return firefoxDriver
     }
 }

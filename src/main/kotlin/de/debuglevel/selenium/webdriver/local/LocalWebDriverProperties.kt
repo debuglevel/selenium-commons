@@ -1,7 +1,12 @@
 package de.debuglevel.selenium.webdriver.local
 
 import de.debuglevel.selenium.webdriver.WebDriverProperties
+import java.nio.file.Path
 
-abstract class LocalWebDriverProperties : WebDriverProperties() {
-    abstract var binarypath: String
-}
+/**
+ * Properties to configure a local WebDriver
+ * @param driverBinaryPath Path to the driver binary
+ */
+abstract class LocalWebDriverProperties(
+    val driverBinaryPath: Path
+) : WebDriverProperties()

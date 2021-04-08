@@ -1,10 +1,12 @@
 package de.debuglevel.selenium.webdriver.remote.firefox
 
 import de.debuglevel.selenium.webdriver.remote.RemoteWebDriverProperties
-import io.micronaut.context.annotation.ConfigurationProperties
+import java.net.URL
 
-@ConfigurationProperties("app.ptk-automation.webdrivers.remotefirefox")
-class FirefoxRemoteWebDriverProperties : RemoteWebDriverProperties() {
-    override var enabled = false
-    override var url = ""
-}
+/**
+ * Properties to configure a remote Firefox WebDriver
+ * @param url URL to the remote WebDriver (e.g. `http://localhost:4001/wd/hub`)
+ */
+class FirefoxRemoteWebDriverProperties(
+    url: URL,
+) : RemoteWebDriverProperties(url)

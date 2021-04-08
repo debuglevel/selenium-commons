@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.remote.LocalFileDetector
 import org.openqa.selenium.remote.RemoteWebDriver
-import java.net.URL
 
 class ChromeRemoteWebDriverService(
     private val chromeRemoteWebDriverProperties: ChromeRemoteWebDriverProperties
@@ -17,9 +16,10 @@ class ChromeRemoteWebDriverService(
         logger.debug { "Getting WebDriver..." }
 
         val chromeOptions = ChromeOptions()
-        val remoteDriver = RemoteWebDriver(URL(chromeRemoteWebDriverProperties.url), chromeOptions)
+        val remoteDriver = RemoteWebDriver(chromeRemoteWebDriverProperties.url, chromeOptions)
         remoteDriver.fileDetector = LocalFileDetector()
 
+        logger.debug { "Got WebDriver: $remoteDriver" }
         return remoteDriver
     }
 }
