@@ -1,16 +1,12 @@
-package de.debuglevel.selenium.webdriver.chrome
+package de.debuglevel.selenium.webdriver.local.chrome
 
 import de.debuglevel.selenium.webdriver.WebDriverService
-import io.micronaut.context.annotation.Requires
 import mu.KotlinLogging
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
-import javax.inject.Singleton
 
-@Singleton
-@Requires(property = "app.ptk-automation.webdrivers.chrome.enabled", value = "true")
-class ChromeWebDriverService(
-    private val chromeWebDriverProperties: ChromeWebDriverProperties
+class ChromeLocalWebDriverService(
+    private val chromeWebDriverProperties: ChromeLocalWebDriverProperties
 ) : WebDriverService {
     private val logger = KotlinLogging.logger {}
 

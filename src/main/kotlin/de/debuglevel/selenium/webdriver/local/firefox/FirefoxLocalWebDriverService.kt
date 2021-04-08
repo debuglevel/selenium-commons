@@ -1,16 +1,12 @@
-package de.debuglevel.selenium.webdriver.firefox
+package de.debuglevel.selenium.webdriver.local.firefox
 
 import de.debuglevel.selenium.webdriver.WebDriverService
-import io.micronaut.context.annotation.Requires
 import mu.KotlinLogging
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.firefox.FirefoxDriver
-import javax.inject.Singleton
 
-@Singleton
-@Requires(property = "app.ptk-automation.webdrivers.firefox.enabled", value = "true")
-class FirefoxWebDriverService(
-    private val firefoxWebDriverProperties: FirefoxWebDriverProperties
+class FirefoxLocalWebDriverService(
+    private val firefoxWebDriverProperties: FirefoxLocalWebDriverProperties
 ) : WebDriverService {
     private val logger = KotlinLogging.logger {}
 
