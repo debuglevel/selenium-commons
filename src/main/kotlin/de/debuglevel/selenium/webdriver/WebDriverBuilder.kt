@@ -2,9 +2,9 @@ package de.debuglevel.selenium.webdriver
 
 import org.openqa.selenium.WebDriver
 
-interface WebDriverService {
+interface WebDriverBuilder {
     /**
-     * Gets the underlying WebDriver
+     * Builds the WebDriver
      */
-    fun get(): WebDriver
+    fun build(): WebDriver
 }

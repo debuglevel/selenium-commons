@@ -3,6 +3,6 @@ package de.debuglevel.selenium
 /**
  * The page has components which can be filled.
  */
-interface Fillable {
+interface CanBeFilled {
     fun fill()
 }

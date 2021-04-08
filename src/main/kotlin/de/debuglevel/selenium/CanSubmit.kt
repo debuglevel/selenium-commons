@@ -3,6 +3,9 @@ package de.debuglevel.selenium
 /**
  * This page has a submit button
  */
-interface Submitable {
+interface CanSubmit {
+    /**
+     * Submit the page content via the submit button.
+     */
     fun submit()
 }

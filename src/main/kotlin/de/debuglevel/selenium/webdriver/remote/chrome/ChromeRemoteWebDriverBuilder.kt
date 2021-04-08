@@ -1,18 +1,18 @@
 package de.debuglevel.selenium.webdriver.remote.chrome
 
-import de.debuglevel.selenium.webdriver.WebDriverService
+import de.debuglevel.selenium.webdriver.WebDriverBuilder
 import mu.KotlinLogging
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.remote.LocalFileDetector
 import org.openqa.selenium.remote.RemoteWebDriver
 
-class ChromeRemoteWebDriverService(
+class ChromeRemoteWebDriverBuilder(
     private val chromeRemoteWebDriverProperties: ChromeRemoteWebDriverProperties
-) : WebDriverService {
+) : WebDriverBuilder {
     private val logger = KotlinLogging.logger {}
 
-    override fun get(): WebDriver {
+    override fun build(): WebDriver {
         logger.debug { "Getting WebDriver..." }
 
         val chromeOptions = ChromeOptions()

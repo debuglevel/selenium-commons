@@ -50,7 +50,7 @@ private fun WebDriver.validateElementDisplayed(elementBy: By) {
 
     logger.trace { "Validating whether element '$elementBy' is displayed..." }
     if (!element.isDisplayed) {
-        throw NotDisplayedElementException(element)
+        throw ElementNotDisplayedException(element)
     }
 }
 
@@ -78,7 +78,7 @@ fun WebDriver.sendKeysTo(by: By, keys: String?) {
             // TODO: element.text is always empty string
             logger.debug { "Checking if content now is same as sent keys..." }
             if (element.getAttribute("value") != keys) {
-                throw SendKeysFailedException(element.text, keys)
+                throw SendingKeysFailedException(element.text, keys)
             }
         } catch (e: NoSuchElementException) {
             logger.error { "Did not found element $by to send keys to" }
