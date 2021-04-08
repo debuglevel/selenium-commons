@@ -33,13 +33,15 @@ dependencies {
 
     // Logging
     // See http://saltnlight5.blogspot.com/2013/08/how-to-configure-slf4j-with-different.html for a quick introduction to slf4j
+    // "implementation" because it might not be provided by the consumer
     implementation 'io.github.microutils:kotlin-logging:1.6.26'
-    implementation 'org.slf4j:slf4j-api:1.7.25'
-    implementation 'org.slf4j:slf4j-simple:1.7.25'
+    // "compileOnly" because it should be provided (only) by the consumer
+    compileOnly 'org.slf4j:slf4j-api:1.7.25'
+    //implementation 'org.slf4j:slf4j-simple:1.7.25'
 
     // Selenium
     // TODO: that might better not be implementation but some api stuff?
-    implementation "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
+    compileOnly "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
     implementation 'ru.yandex.qatools.ashot:ashot:1.5.4'
 }
 
