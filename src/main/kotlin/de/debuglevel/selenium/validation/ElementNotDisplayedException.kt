@@ -7,4 +7,4 @@ import org.openqa.selenium.WebElement
  * @param element Which element was expected to be displayed.
  */
 class ElementNotDisplayedException(element: WebElement) :
-    InvalidPageException("Element '$element' is not displayed.", inner)
+    InvalidPageException("Element '$element' is not displayed.")

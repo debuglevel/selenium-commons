@@ -8,4 +8,4 @@ package de.debuglevel.selenium.validation
 class InvalidPageTitleException(
     actualPageTitle: String,
     expectedPageTitle: String
-) : InvalidPageException("Page title is '$actualPageTitle' although it was expected to be '$expectedPageTitle'", inner)
+) : InvalidPageException("Page title is '$actualPageTitle' although it was expected to be '$expectedPageTitle'")

@@ -1,4 +1,4 @@
-package de.debuglevel.selenium
+package de.debuglevel.selenium.capabilities
 
 /**
  * The page has components which can be filled.

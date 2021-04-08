@@ -8,4 +8,4 @@ package de.debuglevel.selenium.validation
 class InvalidUrlException(
     actualUrl: String,
     expectedUrl: String
-) : InvalidPageException("Page URL is '$actualUrl' although it was expected to be '$expectedUrl'", inner)
+) : InvalidPageException("Page URL is '$actualUrl' although it was expected to be '$expectedUrl'")

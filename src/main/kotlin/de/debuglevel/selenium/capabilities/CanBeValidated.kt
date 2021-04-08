@@ -1,4 +1,4 @@
-package de.debuglevel.selenium
+package de.debuglevel.selenium.capabilities
 
 /**
  * This page has elements which can be validated.
